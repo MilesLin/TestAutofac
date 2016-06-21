@@ -196,14 +196,14 @@ namespace <#= code.VsNamespaceSuggestion() #>
 		<# foreach (EntityType entity in ItemCollection.GetItems<EntityType>().OrderBy(e => e.Name))
 {; #>
 
-		public static <#=code.Escape(entity)#>Repository Get<#=code.Escape(entity)#>Repository()
+		public static I<#=code.Escape(entity)#>Repository Get<#=code.Escape(entity)#>Repository()
 		{
 			var repository = new <#=code.Escape(entity)#>Repository();
 			repository.UnitOfWork = GetUnitOfWork();
 			return repository;
 		}
 
-		public static <#=code.Escape(entity)#>Repository Get<#=code.Escape(entity)#>Repository(IUnitOfWork unitOfWork)
+		public static I<#=code.Escape(entity)#>Repository Get<#=code.Escape(entity)#>Repository(IUnitOfWork unitOfWork)
 		{
 			var repository = new <#=code.Escape(entity)#>Repository();
 			repository.UnitOfWork = unitOfWork;
